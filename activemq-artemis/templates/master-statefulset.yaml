@@ -12,6 +12,10 @@ spec:
   revisionHistoryLimit: 10
   updateStrategy:
     type: OnDelete
+  securityContext:
+    fsGroup: 1000
+    runAsUser: 1000
+    runAsNonRoot: true
   selector:
     matchLabels:
       app: {{ template "artemis.name" . }}
